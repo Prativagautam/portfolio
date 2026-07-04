@@ -5,8 +5,6 @@ import { zValidator } from "@hono/zod-validator";
 import { Resend } from "resend";
 import { contactSchema } from "../src/lib/schemas.js";
 
-console.log("RESEND_API_KEY present?", !!process.env.RESEND_API_KEY);
-
 const app = new Hono().basePath("/api");
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -31,4 +29,4 @@ app.post("/contact", zValidator("json", contactSchema), async (c) => {
   }
 });
 
-export default handle(app);
+export const POST = handle(app);
