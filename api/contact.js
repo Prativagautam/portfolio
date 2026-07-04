@@ -16,7 +16,7 @@ app.post("/contact", zValidator("json", contactSchema), async (c) => {
   try {
     await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: "gautam.prativa35@example.com", // ← replace with your inbox
+      to: "gautam.prativa35@gmail.com", // ← replace with your inbox
       reply_to: email,
       subject: `New portfolio message from ${name}`,
       text: `From: ${name} (${email})\n\n${message}`,
